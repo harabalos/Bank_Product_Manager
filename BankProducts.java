@@ -1,16 +1,20 @@
 
+import java.util.ArrayList;
+
 public class BankProducts {
     private int code;
     private int number;
     private int afm;
-
-
+    private ArrayList<BankProducts> bankProducts = new ArrayList<BankProducts>();
+    private String type = null;
+    private String describe = null;
 
     public BankProducts(int code, int number, int afm, String type, String describe) {
         this.code = code;
         this.number = number;
         this.afm = afm;
-
+        this.type = type;
+        this.describe = describe;
 
     }
 
@@ -49,5 +53,8 @@ public class BankProducts {
         this.number = number;
     }
 
+    public void setDescribe(String describe) {
+        this.describe = describe;
+    }
 
 }
