@@ -98,7 +98,57 @@ public class Main {
 
                 System.out.println("SELLER ADDED");
 
-            } else if (choice == 2) { 
+            } else if (choice == 2) { // input apo xristi
+                System.out.print("Select 1 for credit cards,\nOr 2 for loans:");
+                int answer = scan.nextInt();
+                if (answer == 1) {
+                    System.out.print("Write the code: ");
+                    int codeP = scan.nextInt();
+
+                    System.out.print("Write the number: ");
+                    int number = scan.nextInt();
+
+                    System.out.print("Write the AFM: ");
+                    int afm = scan.nextInt();
+
+                    System.out.print("Write the commision rate: ");
+                    double commissionRate = scan.nextDouble();
+
+                    System.out.print("Write the max amount of movement: ");
+                    double maxAmountOfMovement = scan.nextDouble();
+
+                    System.out.print("Write the max annual amount: ");
+                    double maxAnnualAmmount = scan.nextDouble();
+
+                    CreditCards creditCardx = new CreditCards(codeP, number, afm, null, null, commissionRate,
+                            maxAmountOfMovement,
+                            maxAnnualAmmount); // ftiaxnei object credit cards kai vazei ta input tou xristi
+
+                    bankStore.getCreditCards().add(creditCardx);
+
+                    System.out.println("CREDIT CARD ADDED");
+                } else if (answer == 2) {
+                    System.out.print("Write the code: ");
+                    int codeP = scan.nextInt();
+
+                    System.out.print("Write the number: ");
+                    int number = scan.nextInt();
+
+                    System.out.print("Write the AFM: ");
+                    int afm = scan.nextInt();
+
+                    System.out.println("Write the amount of Loan: ");
+                    int amountOfLoan = scan.nextInt();
+
+                    System.out.println("Write the Max annual interest rate: ");
+                    int annualInterestRate = scan.nextInt();
+
+                    Loan loanx = new Loan(codeP, number, afm, null, null, amountOfLoan, annualInterestRate);
+
+                    bankStore.getLoans().add(loanx); // ftiaxnei object credit cards kai vazei ta input tou xristi
+
+                    System.out.println("LOAN ADDED");
+
                 }
              else if (choice == 3) {
 
@@ -133,5 +183,6 @@ public class Main {
         scan.close();
         System.out.println("Thank you for visiting Java Bank!");
     }
+}
 }
 
