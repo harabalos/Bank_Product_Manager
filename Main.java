@@ -343,12 +343,19 @@ public class Main {
                                 + creditCardMovementStore.getCreditCardMovements().get(i).getMovementWorth());
                     }
                 }
-            } else if (choice == 7) {
-
-            } else if (choice == 8) { 
-
-
-             
+            } else if (choice == 8) { // upologismos commision olwn!
+                for (int i = 0; i < sellersStore.getSellers().size(); i++) {
+                    sumComision += comisionsOfSellers.get(i);
+                }
+                System.out.println("CALCULATION COMPLETED!");
+            } else { // emfanizei ta commission olwn!
+                for (int i = 0; i < sellersStore.getSellers().size(); i++) {
+                    System.out.println("First name: " + sellersStore.getSellers().get(i).getFirstName()
+                            + "\nLast name: " + sellersStore.getSellers().get(i).getLastName()
+                            + "\nCode: " + sellersStore.getSellers().get(i).getCode()
+                            + "\nCommission: " + comisionsOfSellers.get(i));
+                }
+                System.out.println("\n\nThe final commission amount of all sellers: " + sumComision + "\n\n");
             }
 
             System.out.println( // ksanarwta sto telos tis loopas
@@ -362,8 +369,6 @@ public class Main {
         }
         scan.close();
         System.out.println("Thank you for visiting Java Bank!");
-    
     }
 
 }
-
